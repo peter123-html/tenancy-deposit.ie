@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Irish Tenancy Platform</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="dashboard">
+      <h2>Dashboard</h2>
+      <div id="user-info"></div>
+      <div id="deposit-section">
+        <h3>Deposit Management</h3>
+        <div id="deposit-status"></div>
+        <form id="deposit-form">
+          <label for="amount">Request Deposit Amount (€):</label>
+          <input type="number" id="amount" step="0.01" min="0" required>
+          <button type="submit">Request Refund</button>
+        </form>
+        <form id="landlord-response-form" style="display:none;">
+          <label for="deduction">Deduction Amount (€):</label>
+          <input type="number" id="deduction" step="0.01" min="0">
+          <label for="documentation">Upload Documentation:</label>
+          <input type="file" id="documentation" accept=".pdf,.jpg,.png">
+          <button type="submit">Submit Response</button>
+        </form>
+        <form id="tenant-response-form" style="display:none;">
+          <p>Landlord Response: <span id="landlord-response"></span></p>
+          <button type="button" id="accept-response">Accept</button>
+          <button type="button" id="dispute-response">Dispute</button>
+        </form>
+      </div>
+      <div id="messages">
+        <h3>Messages</h3>
+        <div id="message-list"></div>
+        <form id="message-form">
+          <label for="message">Send Message:</label>
+          <textarea id="message" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
